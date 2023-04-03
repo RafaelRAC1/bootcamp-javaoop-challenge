@@ -2,26 +2,9 @@ package edu.rafael.challenge.domain;
 
 import java.time.LocalDate;
 
-public class Mentory {
-    private String title;
-    private String description;
+public class Mentory extends Content {
+    
     private LocalDate date;
-
-    public String getTitle() {
-        return this.title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public LocalDate getDate() {
         return this.date;
@@ -32,12 +15,18 @@ public class Mentory {
     }
 
     @Override
+    public double calculateXp() {
+        return STANDARD_XP + 20d;
+    }
+
+    @Override
     public String toString() {
         return "Mentory{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
+                "title='" + getTitle() + '\'' +
+                ", description='" + getDescription() + '\'' +
                 ", date=" + date +
                 '}';
     }
+
 
 }

@@ -1,24 +1,11 @@
 package edu.rafael.challenge.domain;
 
-public class Course {
-    private String title;
-    private String description;
+public class Course extends Content {
     private int timeDuration;
 
-    public String getTitle() {
-        return this.title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    @Override
+    public double calculateXp() {
+        return STANDARD_XP * timeDuration;
     }
 
     public int getTimeDuration() {
@@ -32,9 +19,11 @@ public class Course {
     @Override
     public String toString() {
         return "Course{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
+                "title='" + getTitle() + '\'' +
+                ", description='" + getDescription() + '\'' +
                 ", timeDuration=" + timeDuration +
                 '}';
     }
+
+    
 }
